@@ -1,8 +1,13 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, redirect
 from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
+
+
+@app.route("/")
+def index():
+    return redirect("http://0.0.0.0:3000", code=301)
 
 
 @app.route("/api/linkedin", methods=["GET"])
