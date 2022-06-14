@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return redirect(request.host_url + ":3000", code=301)
+    return redirect(request.host_url.replace(":5000", ":3000"), code=301)
 
 
 @app.route("/api/linkedin", methods=["GET"])
