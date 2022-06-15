@@ -55,3 +55,16 @@ def journey():
         "title": "Summer of Freshman Year",
         "events": ["MLH Production Engineering Fellowship!"]
     }])
+
+
+@app.route("/api/projects", methods=["GET"])
+def projects():
+    return jsonify([
+        {
+            "title": "Pokemon Data Explorer",
+            "date": "May 2022",
+            "description": "Pokedex clone?",
+            "URL": "https://github.com/jiechenmc/poke_data_explorer",
+            "status": "incomplete"
+        },
+    ])

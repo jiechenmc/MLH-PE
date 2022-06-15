@@ -5,5 +5,4 @@ module.exports = {
       screens: { sm: "320px", md: "768px" },
     },
   },
-  plugins: [require("tw-elements/dist/plugin")],
 };

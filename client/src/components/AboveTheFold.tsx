@@ -9,7 +9,7 @@ const AboveTheFold = () => {
     <div className="snap-center p-12 text-center relative overflow-hidden bg-no-repeat bg-cover bg-[url('/src/assets/bg_image.webp')] h-screen">
       <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed">
         <div className="flex justify-center items-center h-full">
-          <div className="flex flex-col grow-0">
+          <div className="flex flex-col">
             <h2 className="font-semibold">
               <Avatar
                 name="Jie Chen"
@@ -18,10 +18,8 @@ const AboveTheFold = () => {
               />
             </h2>
             <ViewResumeButton />
-            <div className="appearance-none flex justify-center items-end mt-5">
-              <DownArrow className="animate-bounce w-6 h-6" />
-            </div>
           </div>
+          <DownArrow className="absolute animate-bounce bottom-0 my-5 w-6 h-6" />
         </div>
       </div>
     </div>
