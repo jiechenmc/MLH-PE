@@ -29,9 +29,9 @@ $(document).ready(function () {
         elementBottomPosition >= windowTopPosition &&
         elementTopPosition <= windowBottomPosition
       ) {
-        $element.addClass("animate__animated animate__fadeIn");
+        $element.addClass("animate-fadeIn");
       } else {
-        $element.removeClass("animate__animated animate__fadeIn");
+        $element.removeClass("animate-fadeIn");
       }
     });
   }
