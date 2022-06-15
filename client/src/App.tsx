@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TimeLine from "./components/TimeLine";
 import AboveTheFold from "./components/AboveTheFold";
 import Projects from "./components/Projects";
 
 function App() {
+  useEffect(() => {
+    const script = document.createElement("script");
+
+    script.src = "./script.js";
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="snap-y snap-mandatory">
       <AboveTheFold />

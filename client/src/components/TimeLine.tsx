@@ -1,6 +1,7 @@
 import React from "react";
 import useFetch from "../hooks/useFetch";
 import TimeLineEntries from "./subcomponents/TimeLineEntries";
+import { v4 as uuidv4 } from "uuid";
 
 interface JourneyElement {
   date: string;
@@ -21,6 +22,7 @@ const TimeLine = () => {
         <ol className="border-l border-gray-300">
           {[...journies]?.reverse().map((journey: JourneyElement) => (
             <TimeLineEntries
+              key={uuidv4()}
               date={journey?.date}
               title={journey?.title}
               events={journey?.events}

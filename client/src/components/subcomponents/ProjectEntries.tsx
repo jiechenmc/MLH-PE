@@ -36,7 +36,7 @@ const ProjectEntries = ({
           {title}
         </h5>
         <p className="appearance-none mb-2 text-gray-500 text-sm">{date}</p>
-        <p className="text-gray-500 text-base mb-4 animate__animated animate__fadeIn animate__delay-1s">
+        <p className="text-gray-500 text-base mb-4 animation-element">
           {description}
         </p>
         <button

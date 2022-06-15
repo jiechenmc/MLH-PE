@@ -1,6 +1,7 @@
 import React from "react";
 import ProjectEntries from "./subcomponents/ProjectEntries";
 import useFetch from "../hooks/useFetch";
+import { v4 as uuidv4 } from "uuid";
 
 interface ProjectElement {
   title: string;
@@ -22,6 +23,7 @@ const Projects = () => {
       </h1>
       {[...projects]?.reverse().map((project: ProjectElement) => (
         <ProjectEntries
+          key={uuidv4()}
           title={project?.title}
           date={project?.date}
           description={project?.description}

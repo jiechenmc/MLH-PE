@@ -15,9 +15,7 @@ const TimeLineEntries = ({ date, title, events }: TimeLineEntriesProps) => {
       </div>
       <div className="mt-0.5 ml-4 mb-6 whitespace-pre-line">
         <h4 className="text-gray-800 font-semibold text-xl mb-1.5">{title}</h4>
-        <p className="text-gray-500 mb-3 animate__animated animate__fadeIn animate__delay-1s">
-          {events}
-        </p>
+        <p className="text-gray-500 mb-3 animation-element">{events}</p>
       </div>
     </li>
   );
