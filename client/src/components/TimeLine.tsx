@@ -8,6 +8,7 @@ interface JourneyElement {
   title: string;
   events: string[];
 }
+
 const TimeLine = () => {
   let journies: JourneyElement[] = useFetch("/api/journey")!;
 
