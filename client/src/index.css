@@ -16,6 +16,7 @@
     to{border-right-color: transparent;}
   }
 
-html {
+
+.animation-elment {
   --animate-delay: 0.8s;
 }
