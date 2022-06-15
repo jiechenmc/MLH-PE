@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as GitIcon } from "../../assets/GitIcon.svg";
+import { ReactComponent as GitHubLogo } from "../../assets/GithubLogo.svg";
 
 interface ProjectEntriesProps {
   title: string;
@@ -44,7 +44,7 @@ const ProjectEntries = ({
           className="inline-block px-6 py-2.5 bg-[#333] text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-[#4078c0] hover:shadow-lg focus:bg-[#4078c0] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
           onClick={handleOnClick}
         >
-          <GitIcon className="w-4 h-4" />
+          <GitHubLogo className="w-4 h-4" />
         </button>
       </div>
     </div>
