@@ -33,7 +33,7 @@
       fetch("/api/timeline_post").then((resp) => {
         resp.json().then((d) => {
           const list = document.querySelector("#ALL_POSTS");
-          const posts = e.posts;
+          const posts = d.posts;
           posts.forEach((e) => {
             let li = document.createElement("li");
             li.textContent = `Date: ${e.date} \\ Title: ${e.title}Events: \\ ${e.events}`;
