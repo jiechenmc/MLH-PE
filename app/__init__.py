@@ -55,7 +55,7 @@ def timeline():
 @app.route("/")
 def index():
     return redirect(request.environ.get('HTTP_ORIGIN',
-                                        'http://localhost:5000').replace(
+                                        'http://143.198.126.5:5000').replace(
                                             ":5000", ":3000"),
                     code=301)
 
