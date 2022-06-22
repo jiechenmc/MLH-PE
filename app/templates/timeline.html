@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeLine Page</title>
+  </head>
+  <body>
+    <form>
+      <label for="date">Date:</label><br />
+      <input type="text" id="date" name="date" /><br />
+      <label for="title">Title:</label><br />
+      <input type="text" id="title" name="title" /><br /><br />
+      <label for="title">Events:</label><br />
+      <input type="text" id="events" name="events" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <h1>Responses:</h1>
+    <ol id="ALL_POSTS"></ol>
+  </body>
+
+  <script>
+    form = document.querySelector("form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const FD = new FormData(e.target);
+      fetch("/api/timeline_post", {
+        method: "POST",
+        body: FD,
+      });
+
+      fetch("/api/timeline_post").then((resp) => {
+        resp.json().then((d) => {
+          const list = document.querySelector("#ALL_POSTS");
+
+          posts.forEach((e) => {
+            let li = document.createElement("li");
+            li.textContent = `Date: ${e.date} \\ Title: ${e.title}Events: \\ ${e.events}`;
+            list.appendChild(li);
+          });
+        });
+      });
+    });
+  </script>
+</html>

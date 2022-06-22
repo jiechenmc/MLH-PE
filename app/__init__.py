@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, redirect, request
+from flask import Flask, jsonify, redirect, render_template, request
 from dotenv import load_dotenv
 from peewee import MySQLDatabase, Model, CharField, TextField
 from playhouse.shortcuts import model_to_dict
@@ -45,6 +45,11 @@ def timeline_post():
         del_id = request.form["id"]
         TimelinePost.delete_by_id(del_id)
         return f'Removed ID: {del_id}'
+
+
+@app.route("/timeline")
+def timeline():
+    return render_template("timeline.html")
 
 
 @app.route("/")
