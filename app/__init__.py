@@ -22,11 +22,6 @@ class TimelinePost(Model):
     class Meta:
         database = db
 
-
-db.connect()
-db.create_tables([TimelinePost])
-
-
 @app.route("/api/timeline_post", methods=["GET", "POST", "DELETE"])
 def timeline_post():
     if request.method == "POST":
@@ -114,3 +109,10 @@ def projects():
             "status": "incomplete"
         },
     ])
+
+# Wrapping these commands so tests/test_db.py can import TimelinePost without 
+# the db and app trying to connect and run.
+if __name__ == '__main__':
+    db.connect()
+    db.create_tables([TimelinePost])
+    app.run()
