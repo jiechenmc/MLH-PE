@@ -25,3 +25,6 @@ class TestTimelinePost(unittest.TestCase):
         assert first_post.id == 1
         second_post = TimelinePost.create(date='November 5', title='A soliloquy', events='O, the Pelican. So smoothly doth he crest. A wind god!')
         assert second_post.id == 2
+
+        assert TimelinePost.get_by_id(1) == first_post
+        assert TimelinePost.get_by_id(2) == second_post
