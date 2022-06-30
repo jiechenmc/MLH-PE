@@ -1,6 +1,5 @@
-import React from "react";
 import ProjectEntries from "./subcomponents/ProjectEntries";
-import useFetch from "../hooks/useFetch";
+import PROJECTS from "../data/PROJECTS";
 import { v4 as uuidv4 } from "uuid";
 
 interface ProjectElement {
@@ -9,28 +8,28 @@ interface ProjectElement {
   description: string;
   URL: string;
   status: string;
+  stack: string;
 }
 
 const Projects = () => {
-  let projects: ProjectElement[] = useFetch("/api/projects")!;
-
-  if (!projects) return null;
-
   return (
-    <div className="snap-center">
-      <h1 className="relative text-2xl text-gray-700 font-bold text-center mt-3 mb-3">
-        My Projects
+    <div id="projects">
+      <h1 className="relative text-2xl light:text-gray-700 dark:text-base-content font-bold text-center mt-3 mb-3">
+        Featured Projects
       </h1>
-      {[...projects]?.reverse().map((project: ProjectElement) => (
-        <ProjectEntries
-          key={uuidv4()}
-          title={project?.title}
-          date={project?.date}
-          description={project?.description}
-          URL={project?.URL}
-          status={project?.status}
-        />
-      ))}
+      <div className="sm:flex-col md:grid md:grid-cols-3 justify-between">
+        {[...PROJECTS]?.reverse().map((project: ProjectElement) => (
+          <ProjectEntries
+            key={uuidv4()}
+            title={project?.title}
+            date={project?.date}
+            description={project?.description}
+            URL={project?.URL}
+            status={project?.status}
+            stack={project?.stack}
+          />
+        ))}
+      </div>
     </div>
   );
 };
