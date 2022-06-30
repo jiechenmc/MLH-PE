@@ -1,20 +1,26 @@
 export default [
   {
-    date: "August 2021",
-    title: "Fall of Freshman Year",
-    events: ["(CSE114) Introduction to Object-Oriented Programming"],
+    courseCode: "CSE114",
+    courseName: "Intro to Object-Oriented Programming",
+    instructor: "Paul Fodor",
+    completed: true,
   },
   {
-    date: "January 2022",
-    title: "Spring of Freshman Year",
-    events: [
-      "(CSE214) Data Structures\n",
-      "(CSE215) Foundations of Computer Science",
-    ],
+    courseCode: "CSE214",
+    courseName: "Data Structures",
+    instructor: "Praveen Tripathi",
+    completed: true,
   },
   {
-    date: "May 2022",
-    title: "Summer of Freshman Year",
-    events: ["MLH Production Engineering Fellowship!"],
+    courseCode: "CSE215",
+    courseName: "Foundations of Computer Science",
+    instructor: "Pramod Ganapathi",
+    completed: true,
+  },
+  {
+    courseCode: "CSE216",
+    courseName: "Programming Abstractions",
+    instructor: "Ritwik Banerjee",
+    completed: false,
   },
 ];

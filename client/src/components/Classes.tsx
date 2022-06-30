@@ -1,12 +1,13 @@
 import ClassEntries from "./subcomponents/ClassEntries";
-import JOURNIES from "../data/CLASSES";
+import CLASSES from "../data/CLASSES";
 import { v4 as uuidv4 } from "uuid";
 import SBULogo from "../assets/sbu.webp";
 
-interface JourneyElement {
-  date: string;
-  title: string;
-  events: string[];
+interface ClassElement {
+  courseCode: string;
+  courseName: string;
+  instructor: string;
+  completed: boolean;
 }
 
 const Classes = () => {
@@ -28,16 +29,28 @@ const Classes = () => {
       </div>
 
       <div className="flex justify-center ml-3">
-        <ol className="border-l border-gray-300">
-          {[...JOURNIES]?.reverse().map((journey: JourneyElement) => (
-            <ClassEntries
-              key={uuidv4()}
-              date={journey?.date}
-              title={journey?.title}
-              events={journey?.events}
-            />
-          ))}
-        </ol>
+        <div className="overflow-x-auto">
+          <table className="table w-full">
+            <thead>
+              <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Instructor</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[...CLASSES]?.reverse().map((project: ClassElement) => (
+                <ClassEntries
+                  key={uuidv4()}
+                  courseCode={project?.courseCode}
+                  courseName={project?.courseName}
+                  instructor={project?.instructor}
+                  completed={project?.completed}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
