@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Animation */
-.anim-typewriter{
-    animation: typewriter 2s steps(100) 1s 1 normal both,
-               blinkTextCursor 1000ms steps(100) infinite normal;
-  }
-  @keyframes typewriter{
-    from{width: 0;}
-    to{width: 100%;}
-  }
-  @keyframes blinkTextCursor{
-    from{border-right-color: rgba(255,255,255);}
-    to{border-right-color: transparent;}
-  }
+html {
+  scroll-behavior: smooth;
+}
