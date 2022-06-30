@@ -8,10 +8,13 @@ from app import app, db, TimelinePost
 class AppTestCase(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
-        db.connect(reuse_if_open=True)
+        db.connect()
         db.create_tables([TimelinePost])
-
     
+    def tearDown(self):
+        db.drop_tables([TimelinePost])
+        db.close()
+
     def test_home(self):
         response = self.client.get("/")
         # assert we are redirected to the correct url
@@ -48,6 +51,7 @@ class AppTestCase(unittest.TestCase):
         response = self.client.post("/api/timeline_post", data={'date': 'September 20', 'event': 'Hello world!'})
         assert response.status_code == 400
         html = response.get_data(as_text=True)
+        print(html)
         assert "Invalid title" in html
 
         # malformed events
