@@ -42,3 +42,22 @@ class AppTestCase(unittest.TestCase):
         assert response.status_code == 200
         html = response.get_data(as_text=True)
         assert "TimeLine Page" in html
+    
+    def test_malformed_timeline_post(self):
+        # malformed title
+        response = self.client.post("/api/timeline_post", data={'date': 'September 20', 'event': 'Hello world!'})
+        assert response.status_code == 400
+        html = response.get_data(as_text=True)
+        assert "Invalid title" in html
+
+        # malformed events
+        response = self.client.post("/api/timeline_post", data={'date': 'September 20', 'title': 'Hello world!', 'events': ''})
+        assert response.status_code == 400
+        html = response.get_data(as_text=True)
+        assert "Invalid events" in html
+
+        # malformed date
+        response = self.client.post("/api/timeline_post", data={ 'title': 'Hello world!', 'events': 'hiiiiii' })
+        assert response.status_code == 400
+        html = response.get_data(as_text=True)
+        assert "Invalid date" in html
