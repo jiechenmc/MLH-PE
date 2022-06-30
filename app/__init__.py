@@ -29,6 +29,13 @@ class TimelinePost(Model):
 @app.route("/api/timeline_post", methods=["GET", "POST", "DELETE"])
 def timeline_post():
     if request.method == "POST":
+        if 'date' not in request.form:
+            return jsonify({"error": "Invalid date"}), 400
+        if 'title' not in request.form:
+            return jsonify({"error": "Invalid title"}), 400
+        if 'events' not in request.form or request.form['events'] == '':
+            return jsonify({"error": "Invalid events"}), 400
+
         date = request.form["date"]
         title = request.form["title"]
         events = request.form["events"]
