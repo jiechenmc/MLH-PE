@@ -20,12 +20,14 @@ const ThemeToggle = () => {
   }, [isDarkTheme]);
 
   return (
-    <div className="absolute text-center my-2 mr-5 btn btn-circle right-0 top-0">
+    <div className="text-center">
       <label className="swap swap-rotate">
         <input type="checkbox" onChange={toggleTheme} />
 
         <svg
-          className="swap-off fill-current w-10 h-10 "
+          className="swap-off fill-white"
+          width="24"
+          height="24"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -33,7 +35,9 @@ const ThemeToggle = () => {
         </svg>
 
         <svg
-          className="swap-on fill-current w-10 h-10"
+          className="swap-on fill-black"
+          width="24"
+          height="24"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >

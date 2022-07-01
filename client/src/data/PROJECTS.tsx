@@ -7,7 +7,7 @@ export default [
     URL: "https://github.com/jiechenmc/MLH-PE",
     status: "incomplete",
     stack:
-      "python,typescript,bash,react,docker,flask,digitalocean,mysql,tailwindcss",
+      "Python,TypeScript,Bash,React,Docker,Flask,DigitalOcean,MySQL,TailwindCSS",
   },
   {
     title: "SBU Prof Data",
@@ -16,7 +16,7 @@ export default [
       "RESTful API for comments and grade distribution data from SBUClassieEval.",
     URL: "https://github.com/jiechenmc/prof",
     status: "complete",
-    stack: "python,playwright,fastapi,mongodb,heroku,docker",
+    stack: "Python,Playwright,FastAPI,MongoDB,Heroku,Docker",
   },
   {
     title: "Portfolio Website",
@@ -25,6 +25,6 @@ export default [
       "Portfolio Website to show the world who I am and what I've accomplished!",
     URL: "https://github.com/jiechenmc/jiechen.dev",
     status: "complete",
-    stack: "typescript,react,firebase,tailwindcss",
+    stack: "TypeScript,React,Firebase,TailwindCSS",
   },
 ];

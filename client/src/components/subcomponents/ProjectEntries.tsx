@@ -22,7 +22,7 @@ const ProjectEntries = ({
   };
 
   const handleOnClick = () => {
-    window.open(URL, "_blank");
+    window.open(URL, "_self");
   };
 
   const icons = stack.split(",").map((e) => useIcon(e));

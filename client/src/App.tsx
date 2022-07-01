@@ -7,6 +7,7 @@ function App() {
   return (
     <div>
       <Head />
+
       <div className="justify-evenly sm:flex-col md:flex-row">
         <Classes />
         <Projects />

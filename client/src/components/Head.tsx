@@ -1,6 +1,5 @@
 import ViewResumeButton from "./ViewResumeButton";
 import worry from "../assets/worry_study.webp";
-import ThemeToggle from "./ThemeToggle";
 import NavBar from "./NavBar";
 
 const Head = () => {
