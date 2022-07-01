@@ -1,13 +1,17 @@
 from flask import Flask, jsonify, redirect, render_template, request
 from dotenv import load_dotenv
-from peewee import MySQLDatabase, Model, CharField, TextField
+from peewee import MySQLDatabase, Model, CharField, TextField, SqliteDatabase
 from playhouse.shortcuts import model_to_dict
 import os
 
 load_dotenv()
 app = Flask(__name__)
 
-db = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    db = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+else:
+    db = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
                    user=os.getenv("MYSQL_USER"),
                    password=os.getenv("MYSQL_PASSWORD"),
                    host=os.getenv("MYSQL_HOST"),
@@ -22,14 +26,16 @@ class TimelinePost(Model):
     class Meta:
         database = db
 
-
-db.connect()
-db.create_tables([TimelinePost])
-
-
 @app.route("/api/timeline_post", methods=["GET", "POST", "DELETE"])
 def timeline_post():
     if request.method == "POST":
+        if 'date' not in request.form:
+            return jsonify({"error": "Invalid date"}), 400
+        if 'title' not in request.form:
+            return jsonify({"error": "Invalid title"}), 400
+        if 'events' not in request.form or request.form['events'] == '':
+            return jsonify({"error": "Invalid events"}), 400
+
         date = request.form["date"]
         title = request.form["title"]
         events = request.form["events"]
@@ -114,3 +120,10 @@ def projects():
             "status": "incomplete"
         },
     ])
+
+# Wrapping these commands so tests/test_db.py can import TimelinePost without 
+# the db and app trying to connect and run.
+if __name__ == '__main__':
+    db.connect()
+    db.create_tables([TimelinePost])
+    app.run()
