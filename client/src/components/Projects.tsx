@@ -17,10 +17,8 @@ const Projects = () => {
       <h1 className=" text-2xl light:text-gray-700 dark:text-base-content font-bold text-center mt-3 mb-3">
         Featured Projects
       </h1>
-      <div className="flex justify-center mb-6">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jiechenmc&layout=compact&theme=dark&hide_border=true" />
-      </div>
-      <div className="sm:flex-col md:grid md:grid-cols-3 justify-between">
+
+      <div className="sm:flex-col lg:grid lg:grid-cols-3 justify-between ">
         {[...PROJECTS]?.reverse().map((project: ProjectElement) => (
           <ProjectEntries
             key={uuidv4()}
@@ -32,6 +30,13 @@ const Projects = () => {
             stack={project?.stack}
           />
         ))}
+      </div>
+
+      <div className="flex justify-center mb-6">
+        <img
+          className="w-full md:w-[60%] lg:w-[45%] xl:w-[35%] 2xl:w-[25%]"
+          id="GithubStats"
+        />
       </div>
     </div>
   );

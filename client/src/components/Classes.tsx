@@ -33,7 +33,9 @@ const Classes = () => {
           <table className="table w-full">
             <thead>
               <tr>
-                <th>Course Code</th>
+                <th className="text-base-200 md:text-base-content">
+                  Course Code
+                </th>
                 <th>Course Name</th>
                 <th>Instructor</th>
               </tr>

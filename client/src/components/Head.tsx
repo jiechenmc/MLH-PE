@@ -14,7 +14,7 @@ const Head = () => {
                 <img src={worry} />
               </div>
             </div>
-            <img src="https://readme-typing-svg.herokuapp.com?duration=3500&color=67738A&center=true&vCenter=true&lines=Hi+I+am+Jie+Chen!;My+interests+are+...;Data+Engineering+%F0%9F%93%8A!;Production+Engineering+%F0%9F%92%BF!;and+Software+Engineering+%F0%9F%92%BB!+" />
+            <img id="AnimatedIntroduction" />
             <p className="pb-6">SBU '25 — B.S. Computer Science</p>
             <ViewResumeButton />
           </div>
