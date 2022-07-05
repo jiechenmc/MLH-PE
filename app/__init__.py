@@ -12,10 +12,10 @@ if os.getenv("TESTING") == "true":
     db = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
 else:
     db = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-                   user=os.getenv("MYSQL_USER"),
-                   password=os.getenv("MYSQL_PASSWORD"),
-                   host=os.getenv("MYSQL_HOST"),
-                   port=3306)
+                       user=os.getenv("MYSQL_USER"),
+                       password=os.getenv("MYSQL_PASSWORD"),
+                       host=os.getenv("MYSQL_HOST"),
+                       port=3306)
 
 
 class TimelinePost(Model):
@@ -25,6 +25,10 @@ class TimelinePost(Model):
 
     class Meta:
         database = db
+
+
+db.create_tables([TimelinePost], safe=True)
+
 
 @app.route("/api/timeline_post", methods=["GET", "POST", "DELETE"])
 def timeline_post():
@@ -43,7 +47,7 @@ def timeline_post():
         timeline_post = TimelinePost.create(date=date,
                                             title=title,
                                             events=events)
-
+        timeline_post.save()
         return model_to_dict(timeline_post)
     elif request.method == "GET":
         return {'posts': [model_to_dict(p) for p in TimelinePost.select()]}
@@ -121,7 +125,8 @@ def projects():
         },
     ])
 
-# Wrapping these commands so tests/test_db.py can import TimelinePost without 
+
+# Wrapping these commands so tests/test_db.py can import TimelinePost without
 # the db and app trying to connect and run.
 if __name__ == '__main__':
     db.connect()
