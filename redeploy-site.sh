@@ -1,5 +1,3 @@
-# Updates
-tmux kill-server
 cd project-best-project
 git fetch && git reset origin/main --hard
 
