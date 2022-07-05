@@ -6,6 +6,6 @@ RUN npm install
 
 COPY . .
 
-CMD [ "npm", "run", "dev", "--", "--host", "--", "--port 80" ]
+CMD [ "npm", "run", "dev", "--", "--host" ]
 
-EXPOSE 80
+EXPOSE 3000
