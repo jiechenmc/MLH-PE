@@ -1,5 +1,12 @@
 version: "3"
 services:
+  react:
+    container_name: react
+    build: ./client
+    restart: always
+    ports:
+      - "80:80"
+
   myportfolio:
     container_name: myportfolio
     build: .

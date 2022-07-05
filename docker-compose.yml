@@ -1,5 +1,12 @@
 version: "3"
 services:
+  react:
+    container_name: react
+    build: ./client
+    restart: always
+    ports:
+      - "80:80"
+
   myportfolio:
     container_name: myportfolio
     build: .
@@ -20,10 +27,11 @@ services:
     image: mariadb
     restart: always
     env_file:
-    - .env
+      - .env
     volumes:
-    - mydatabase:/var/lib/mysql
+      - mydatabase:/var/lib/mysql
 
 volumes:
   mydatabase:
+
 
