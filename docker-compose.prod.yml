@@ -3,11 +3,8 @@ services:
   react:
     container_name: react
     build: ./client
-    restart: always
     ports:
-      - "80:3000"
-    depends_on:
-      - myportfolio
+      - "3000:3000"
 
   myportfolio:
     container_name: myportfolio
