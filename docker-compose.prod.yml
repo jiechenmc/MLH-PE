@@ -26,7 +26,7 @@ services:
     container_name: nginx
     image: jonasal/nginx-certbot
     environment:
-      - CERTBOT_EMAIL="jieasdsq@example.com"
+      - CERTBOT_EMAIL="jiechenmc+1@gmail.com"
     ports:
       - "80:80"
       - "443:443"
@@ -37,6 +37,7 @@ services:
       - ./user_conf.d:/etc/nginx/user_conf.d
     depends_on:
       - myportfolio
+      - react
 
 volumes:
   mydatabase:
