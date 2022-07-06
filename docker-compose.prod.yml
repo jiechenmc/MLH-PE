@@ -25,7 +25,6 @@ services:
   nginx:
     container_name: nginx
     image: jonasal/nginx-certbot
-    restart: always
     environment:
       - CERTBOT_EMAIL="jieasdsq@example.com"
     ports:
