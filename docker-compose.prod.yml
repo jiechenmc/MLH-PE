@@ -3,8 +3,6 @@ services:
   react:
     container_name: react
     build: ./client
-    ports:
-      - "3000:3000"
 
   myportfolio:
     container_name: myportfolio
@@ -12,8 +10,6 @@ services:
     restart: always
     env_file:
       - .env
-    ports:
-      - "5000:5000"
     depends_on:
       - mysql
 
