@@ -26,7 +26,7 @@ services:
     container_name: nginx
     image: jonasal/nginx-certbot
     environment:
-      - CERTBOT_EMAIL="huazhuwangmc@gmail.com"
+      - CERTBOT_EMAIL="hweqwe@example.com"
     ports:
       - "80:80"
       - "443:443"
