@@ -26,10 +26,10 @@ services:
     container_name: nginx
     image: jonasal/nginx-certbot
     environment:
-      - CERTBOT_EMAIL="hweqwe@example.com"
+      - CERTBOT_EMAIL="yewangmc@gmail.com"
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
     env_file:
       - .env
     volumes:
