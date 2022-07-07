@@ -45,7 +45,7 @@ const ProjectEntries = ({
                 onClick={handleOnClick}
               >
                 <div className="badge badge-md mr-1 capitalize">{date}</div>
-                <GithubProjectIcon />
+                <GithubProjectIcon className="dark:fill-white light:fill-black" />
               </button>
             </h2>
             <p>{description}</p>

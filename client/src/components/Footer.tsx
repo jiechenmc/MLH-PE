@@ -6,10 +6,10 @@ const Footer = () => {
     <footer className="footer footer-center items-center p-4 bg-base-300 text-base">
       <div className="flex flex-row justify-center gap-3">
         <a href="https://github.com/jiechenmc">
-          <GithubFooterIcon />
+          <GithubFooterIcon className="dark:fill-white rounded-full ring ring-accent ring-offset-base-100 ring-offset-2 hover:bg-gray-300 dark:hover:bg-gray-30" />
         </a>
         <a href="https://www.linkedin.com/in/jiechen-sbu/">
-          <LinkedinFooterIcon />
+          <LinkedinFooterIcon className="dark:fill-white rounded-full ring ring-accent ring-offset-base-100 ring-offset-2 hover:bg-gray-300 dark:hover:bg-gray-30" />
         </a>
       </div>
     </footer>

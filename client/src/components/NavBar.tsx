@@ -10,19 +10,19 @@ const NavBar = () => {
         <ul className="menu menu-horizontal">
           <li>
             <a href="#home">
-              <AboutIcon />
+              <AboutIcon className="dark:fill-white light:fill-black" />
               <p className="hidden md:block">About</p>
             </a>
           </li>
           <li>
             <a href="#education">
-              <EducationIcon />
+              <EducationIcon className="dark:fill-white light:fill-black" />
               <p className="hidden md:block">Education</p>
             </a>
           </li>
           <li>
             <a href="#projects">
-              <ProjectsIcon />
+              <ProjectsIcon className="stroke-black dark:stroke-white " />
               <p className="hidden md:block">Projects</p>
             </a>
           </li>

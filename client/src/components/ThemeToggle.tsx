@@ -50,8 +50,8 @@ const ThemeToggle = () => {
     <div className="text-center">
       <label className="swap swap-rotate">
         <input type="checkbox" onChange={toggleTheme} />
-        <LightIcon />
-        <DarkIcon />
+        <LightIcon className="swap-on fill-black" />
+        <DarkIcon className="swap-off fill-white" />
       </label>
     </div>
   );
