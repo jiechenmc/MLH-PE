@@ -14,11 +14,11 @@ interface ProjectElement {
 const Projects = () => {
   return (
     <div id="projects">
-      <h1 className=" text-2xl light:text-gray-700 dark:text-base-content font-bold text-center mt-3 mb-3">
+      <h1 className=" text-2xl light:text-gray-700 dark:text-base-content font-bold text-center mt-3 mb-1">
         Featured Projects
       </h1>
 
-      <div className="sm:flex-col lg:grid lg:grid-cols-3 justify-between ">
+      <div className="sm:flex-col lg:grid lg:grid-cols-3 hd:grid-cols-4 mba:grid-cols-5 justify-between ">
         {[...PROJECTS]?.reverse().map((project: ProjectElement) => (
           <ProjectEntries
             key={uuidv4()}
@@ -32,7 +32,7 @@ const Projects = () => {
         ))}
       </div>
 
-      <div className="flex justify-center mb-6">
+      <div className="flex justify-center">
         <img
           className="w-full md:w-[60%] lg:w-[45%] xl:w-[35%] 2xl:w-[25%]"
           id="GithubStats"

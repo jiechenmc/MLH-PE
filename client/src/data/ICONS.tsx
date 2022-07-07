@@ -38,6 +38,7 @@ const ICONS: { [key: string]: React.ReactElement } = {
   tailwindcss: (
     <Icon icon="logos:tailwindcss-icon" width={width} height={height} />
   ),
+  nginx: <Icon icon="logos:nginx" width={width} height={height} />,
 };
 
 export default ICONS;
