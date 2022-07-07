@@ -4,7 +4,7 @@ services:
     container_name: react
     build: ./client
     ports:
-      - "3000:80"
+      - 3000:80
     restart: always
 
   myportfolio:
@@ -16,7 +16,7 @@ services:
     environment:
       - FLASK_ENV=development
     ports:
-      - "5000:5000"
+      - 5000:5000
     volumes:
       - .:/myportfolio
     depends_on:
