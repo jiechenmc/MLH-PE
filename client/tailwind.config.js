@@ -5,7 +5,13 @@ module.exports = {
   daisyui: { themes: ["light", "dark"] },
   theme: {
     extend: {
-      screens: { sm: "320px", md: "1024px" },
+      screens: {
+        sm: "425px",
+        md: "768px",
+        lg: "1024px",
+        hd: "1920px",
+        mba: "2560px",
+      },
     },
   },
   plugins: [require("daisyui")],
