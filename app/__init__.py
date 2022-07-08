@@ -57,7 +57,7 @@ def timeline_post():
         return f'Removed ID: {del_id}'
 
 
-@app.route("/api/timeline")
+@app.route("/flask/timeline")
 def timeline():
     return render_template("timeline.html")
 
