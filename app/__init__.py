@@ -30,7 +30,7 @@ class TimelinePost(Model):
 db.create_tables([TimelinePost], safe=True)
 
 
-@app.route("/api/timeline_post", methods=["GET", "POST", "DELETE"])
+@app.route("/timeline_post", methods=["GET", "POST", "DELETE"])
 def timeline_post():
     if request.method == "POST":
         if 'date' not in request.form:
