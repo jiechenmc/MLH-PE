@@ -38,6 +38,12 @@ You don't need to submit any pull requests to thie repository. You need to do al
 
 ## Installation
 
+With Docker
+
+```bash
+docker compose up --build
+```
+
 Make sure you have python3 and pip installed
 
 Create and activate virtual environment using virtualenv
@@ -57,12 +63,6 @@ pip install -r requirements.txt
 
 Create a .env file using the example.env template (make a copy using the variables inside of the template)
 There should be a variable in that .env such that `MAPS_API_KEY="YOUR_API_KEY"`
-
-With Docker
-
-```bash
-docker compose up --build
-```
 
 Start flask development server
 
