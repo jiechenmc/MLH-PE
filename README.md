@@ -53,16 +53,16 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all dep
 pip install -r requirements.txt
 ```
 
-Or with Docker
-
-```bash
-docker compose up
-```
-
 ## Usage
 
 Create a .env file using the example.env template (make a copy using the variables inside of the template)
 There should be a variable in that .env such that `MAPS_API_KEY="YOUR_API_KEY"`
+
+With Docker
+
+```bash
+docker compose up --build
+```
 
 Start flask development server
 
