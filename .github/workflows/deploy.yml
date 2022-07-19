@@ -56,8 +56,10 @@ jobs:
         run: |
           ssh my-vm '~/redeploy-site.sh'
           curl ${{ secrets.DISCORD_WEBHOOK }} -d "content=🚀 Deployment Successful"
+
   run-if-test-fail:
     name: Failed Test
+    needs: [test]
     if: ${{ needs.test.result == 'failure' }}
     steps:
       - name: Notification on Discord
