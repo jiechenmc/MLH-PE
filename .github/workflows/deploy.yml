@@ -31,9 +31,9 @@ jobs:
         run: ./run_testsx.sh
 
   deploy:
-    needs: test
-    name: "Deploy to DigitalOcean Droplet"
     runs-on: ubuntu-latest
+    name: "Deploy to DigitalOcean Droplet"
+    needs: [test]
     steps:
       - name: Configure SSH
         run: |
@@ -58,6 +58,7 @@ jobs:
           curl ${{ secrets.DISCORD_WEBHOOK }} -d "content=🚀 Deployment Successful"
 
   run-if-test-fail:
+    runs-on: ubuntu-latest
     name: Failed Test
     needs: [test]
     if: ${{ needs.test.result == 'failure' }}
