@@ -29,4 +29,6 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
 
       - name: Deploy site
-        run: ssh my-vm '~/redeploy-site.sh'
+        run: |
+        ssh my-vm '~/redeploy-site.sh'
+        curl https://discord.com/api/webhooks/998777081368416416/WfQx8fvMwCuwW55grAdGdaYeBOoOHSMwmhLZA-sX657LQ10BKPmGrHktoR4_Lz0aap-- -d "content=🚀 Deployment Successful"
