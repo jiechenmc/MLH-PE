@@ -60,7 +60,7 @@ jobs:
         run: ssh my-vm '~/redeploy-site.sh'
 
       - name: Discord Notification
-        run: ssh my-vm 'curl ${{ secrets.DISCORD_WEBHOOK }} -d "content=$(docker ps) 🚀 Deployment Successful"'
+        run: ssh my-vm $'curl ${{ secrets.DISCORD_WEBHOOK }} -d "content=$(docker ps)\n🚀 Deployment Successful"'
 
   deployment-failure:
     runs-on: ubuntu-latest
