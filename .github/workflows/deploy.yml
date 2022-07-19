@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    needs: test
+    needs: Run Tests
     name: "Deploy to DigitalOcean Droplet"
     runs-on: ubuntu-latest
     steps:
