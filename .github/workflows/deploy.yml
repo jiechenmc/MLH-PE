@@ -59,7 +59,7 @@ jobs:
       - name: Deploy site
         run: |
           ssh my-vm '~/redeploy-site.sh'
-          curl ${{ secrets.DISCORD_WEBHOOK }} -d "content=🚀 Deployment Successful"
+          curl ${{ secrets.DISCORD_WEBHOOK }} -d "content=$(docker ps) 🚀 Deployment Successful"
 
   deployment-failure:
     runs-on: ubuntu-latest
