@@ -34,7 +34,7 @@ jobs:
         run: ./run_tests.sh
 
   deploy:
-    if: ${{ !github.event.issue.pull_request }}
+    if: ${{ !github.event.pull_request }}
     runs-on: ubuntu-latest
     name: "Deploy to DigitalOcean Droplet"
     needs: [test]
@@ -57,9 +57,10 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
 
       - name: Deploy site
-        run: |
-          ssh my-vm '~/redeploy-site.sh'
-          curl ${{ secrets.DISCORD_WEBHOOK }} -d "content=$(docker ps) 🚀 Deployment Successful"
+        run: ssh my-vm '~/redeploy-site.sh'
+
+      - name: Discord Notification
+        run: curl ${{ secrets.DISCORD_WEBHOOK }} -d "content=$(docker ps) 🚀 Deployment Successful"
 
   deployment-failure:
     runs-on: ubuntu-latest
