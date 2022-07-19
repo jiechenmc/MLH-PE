@@ -44,6 +44,12 @@ With Docker
 docker compose up --build
 ```
 
+In Production
+
+```bash
+docker compose -f docker-compose.prod.yml up --build
+```
+
 Make sure you have python3 and pip installed
 
 Create and activate virtual environment using virtualenv
