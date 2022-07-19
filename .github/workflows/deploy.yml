@@ -5,6 +5,9 @@ on:
     branches:
       - main
   workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -31,6 +34,7 @@ jobs:
         run: ./run_tests.sh
 
   deploy:
+    if: ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     name: "Deploy to DigitalOcean Droplet"
     needs: [test]
