@@ -28,7 +28,7 @@ jobs:
         run: python3-virtualenv/bin/pip install -r requirements.txt
 
       - name: Run Tests
-        run: ./run_tests.sh
+        run: ./run_testsx.sh
 
   deploy:
     needs: test
@@ -55,4 +55,10 @@ jobs:
       - name: Deploy site
         run: |
           ssh my-vm '~/redeploy-site.sh'
-          curl https://discord.com/api/webhooks/998777081368416416/WfQx8fvMwCuwW55grAdGdaYeBOoOHSMwmhLZA-sX657LQ10BKPmGrHktoR4_Lz0aap-- -d "content=🚀 Deployment Successful"
+          curl ${{ secrets.DISCORD_WEBHOOK }} -d "content=🚀 Deployment Successful"
+  run-if-test-fail:
+    name: Failed Test
+    if: ${{ needs.test.result == 'failure' }}
+    steps:
+      - name: Notification on Discord
+        run: curl ${{ secrets.DISCORD_WEBHOOK }} -d "content=Test Failed"
