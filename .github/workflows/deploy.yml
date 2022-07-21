@@ -65,7 +65,7 @@ jobs:
   deployment-failure:
     runs-on: ubuntu-latest
     name: Failed Test
-    needs: [test]
+    needs: [test, deploy]
     if: failure()
     steps:
       - name: Notification on Discord
