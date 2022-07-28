@@ -15,7 +15,7 @@ const Head = () => {
               </div>
             </div>
             <img id="AnimatedIntroduction" />
-            <p className="pb-6">SBU '25 — B.S. Computer Science</p>
+            <p className="pb-6">⚡⚡⚡ Blazingly Fast ⚡⚡⚡</p>
             <ViewResumeButton />
           </div>
         </div>

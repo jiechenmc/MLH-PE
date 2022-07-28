@@ -2,6 +2,7 @@ import ThemeToggle from "./ThemeToggle";
 import { ReactComponent as ProjectsIcon } from "../assets/ProjectsIcon.svg";
 import { ReactComponent as AboutIcon } from "../assets/AboutIcon.svg";
 import { ReactComponent as EducationIcon } from "../assets/EducationIcon.svg";
+import { ReactComponent as WorkIcon } from "../assets/Work.svg";
 
 const NavBar = () => {
   return (
@@ -12,6 +13,12 @@ const NavBar = () => {
             <a href="#home">
               <AboutIcon className="dark:fill-white light:fill-black" />
               <p className="hidden md:block">About</p>
+            </a>
+          </li>
+          <li>
+            <a href="#work">
+              <WorkIcon className="stroke-black dark:stroke-white " />
+              <p className="hidden md:block">Experience</p>
             </a>
           </li>
           <li>
@@ -26,6 +33,7 @@ const NavBar = () => {
               <p className="hidden md:block">Projects</p>
             </a>
           </li>
+
           <li>
             <ThemeToggle />
           </li>

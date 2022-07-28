@@ -39,6 +39,13 @@ const ICONS: { [key: string]: React.ReactElement } = {
     <Icon icon="logos:tailwindcss-icon" width={width} height={height} />
   ),
   nginx: <Icon icon="logos:nginx" width={width} height={height} />,
+  solidjs: <Icon icon="logos:solidjs-icon" width={width} height={height} />,
+  sqlite: (
+    <Icon icon="vscode-icons:file-type-sqlite" width={width} height={height} />
+  ),
+  github_actions: (
+    <Icon icon="logos:github-actions" width={width} height={height} />
+  ),
 };
 
 export default ICONS;

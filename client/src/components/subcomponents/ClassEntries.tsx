@@ -1,16 +1,11 @@
-interface ClassEntriesProps {
-  courseCode: string;
-  courseName: string;
-  instructor: string;
-  completed: boolean;
-}
+import { ClassElement } from "../Education";
 
 const ClassEntries = ({
   courseCode,
   courseName,
   instructor,
   completed,
-}: ClassEntriesProps) => {
+}: ClassElement) => {
   return (
     <tr className={`${completed ? "text-success" : "text-warning"}`}>
       <td>{courseCode}</td>
